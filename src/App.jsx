@@ -1,17 +1,9 @@
 import { useState } from 'react'
 import './App.css'
 import PokemonCard from './components/PokemonCard'
-import PropTypes from 'prop-types'
 
 
-PokemonCard.propTypes = {
 
-  pokemon: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    imgSrc: PropTypes.string,
-  }).isRequired,
-
-}
 
 
 
@@ -34,7 +26,7 @@ const pokemonList = [
   return (
     <>
 
-      <PokemonCard pokemon={pokemonList[1]}/>
+      <PokemonCard pokemon={pokemonList[0]}/>
 
     </>
   )
