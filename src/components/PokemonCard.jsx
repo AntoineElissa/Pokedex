@@ -1,65 +1,24 @@
 
-const pokemonList = [
-    {
-      name: "bulbasaur",
-      imgSrc:
-        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
-    },
-    {
-      name: "mew",
-    },
-  ];
-
 
 
       /* EN TERNAIRE */
-  function PokemonCard() {
+  function PokemonCard(pokeprops) {
 
-    const pokemon = pokemonList[0];
+   
 
     return (
 
       <figure> 
 
-          {("imgSrc" in pokemon && pokemon.name !== "") ? <img src = {pokemon.imgSrc} alt={pokemon.name} /> : <p> ??? </p>}
+          {("imgSrc" in pokeprops.pokemon && pokeprops.pokemon.name !== "") ? <img src = {pokeprops.pokemon.imgSrc} alt={pokeprops.pokemon.name} /> : <p> ??? </p>}
           
-          <figcaption>{pokemon.name}</figcaption>
+          <figcaption>{pokeprops.pokemon.name}</figcaption>
 
       </figure>
 
     )
 
   }
-
-
-/* IF ELSE EN DEHORS */
-
-
-// function PokemonCard() {
-
-//     const pokemon  = pokemonList[1];
-//     let chaineHtml = "";
-
-//     //Vérifie que imgSrc existe dans objet pokemon et qu'elle n'est pas vide
-//     if("imgSrc" in pokemon && pokemon.imgSrc !== ""){
-//         chaineHtml = <img src = {pokemon.imgSrc} alt={pokemon.name} />;
-//     }
-//     else {
-//         chaineHtml = <p> ??? </p>;
-//     }
-    
-   
-//     return( 
-    
-//     <figure>
-
-//         {chaineHtml}
-//         <figcaption>{pokemon.name}</figcaption>
-    
-//     </figure>
-
-//     )
-// }
 
 
 export default PokemonCard;
