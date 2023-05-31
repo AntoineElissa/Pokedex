@@ -1,9 +1,25 @@
 import { useState } from 'react'
 import './App.css'
 import PokemonCard from './components/PokemonCard'
+import PropTypes from 'prop-types'
+
+
+PokemonCard.propTypes = {
+
+  pokemon: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    imgSrc: PropTypes.string,
+  }).isRequired,
+
+}
 
 
 
+
+function App() {
+  const [count, setCount] = useState(0)
+
+  
 const pokemonList = [
   {
     name: "bulbasaur",
@@ -15,14 +31,10 @@ const pokemonList = [
   },
 ];
 
-
-function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
 
-      <PokemonCard pokemon={pokemonList[0]}/>
+      <PokemonCard pokemon={pokemonList[1]}/>
 
     </>
   )
