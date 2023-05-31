@@ -13,26 +13,53 @@ PokemonCard.propTypes = {
 
   
   
-  /* Fonction */
-  function PokemonCard(pokeprops) {
+  // /* Fonction */
+  // function PokemonCard(pokeprops) {
 
    
 
-    return (
+  //   return (
 
-      <figure> 
+  //     <figure> 
 
-          {("imgSrc" in pokeprops.pokemon && pokeprops.pokemon.name !== "") ? <img src = {pokeprops.pokemon.imgSrc} alt={pokeprops.pokemon.name} /> : <p> ??? </p>}
+  //         {("imgSrc" in pokeprops.pokemon && pokeprops.pokemon) ? <img src = {pokeprops.pokemon.imgSrc} alt={pokeprops.pokemon.name} /> : <p> ??? </p>}
           
-          <figcaption>{pokeprops.pokemon.name}</figcaption>
+  //         <figcaption>{pokeprops.pokemon.name}</figcaption>
 
+  //     </figure>
+
+  //   )
+
+  // }
+
+  function PokemonCard(pokeprops) {
+    return (
+      <figure> 
+        {pokeprops.pokemon && pokeprops.pokemon.imgSrc ? (
+          <img src={pokeprops.pokemon.imgSrc} alt={pokeprops.pokemon.name} />
+        ) : (
+          <p> ??? </p>
+        )}
+        <figcaption>{pokeprops.pokemon && pokeprops.pokemon.name}</figcaption>
       </figure>
-
     )
-
   }
 
 
 export default PokemonCard;
 
 
+// function PokemonCard(pokeprops) {
+//   if (!pokeprops.pokemon || !('imgSrc' in pokeprops.pokemon)) {
+//     return <p>Erreur: Pokemon invalide</p>;
+//   }
+
+//   // Reste du code
+
+//   return (
+//     <figure>
+//       <img src={pokeprops.pokemon.imgSrc} alt={pokeprops.pokemon.name} />
+//       <figcaption>{pokeprops.pokemon.name}</figcaption>
+//     </figure>
+//   );
+// }
