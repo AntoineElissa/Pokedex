@@ -1,7 +1,4 @@
 
-
-
-      /* EN TERNAIRE */
   function PokemonCard(pokeprops) {
 
    
