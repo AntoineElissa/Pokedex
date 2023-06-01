@@ -1,7 +1,9 @@
 import { useState } from 'react'
+import { useEffect } from 'react'
 import './App.css'
 import PokemonCard from './components/PokemonCard'
 import NavBar from './components/NavBar'
+
 
 const pokemonList = [
   {
@@ -37,6 +39,32 @@ function App() {
 
     /* Compteur */
     const [count, setCount] = useState(0)
+    
+    /*Affichage au demarrage*/
+    useEffect(
+      () => {
+        alert("Hello pokemon trainer :)");
+
+        if(count === 3){
+          alert("pika pikachu !!");
+        }
+      },
+      []
+    );
+
+    /* Lorsque pikachu egal 3 */
+    useEffect(
+      () => {
+        
+        if(count === 3){
+          alert("pika pikachu !!");
+        }
+      },
+      [count]
+    );
+
+
+    
 
 
   return (
@@ -52,3 +80,6 @@ function App() {
 }
 
 export default App
+
+
+

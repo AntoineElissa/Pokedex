@@ -1,9 +1,6 @@
 // import { useState } from 'react'
 
 
-
-
-
 function NavBar({taillePokList, countState}) {
 
     const [count, setCount] = countState;
@@ -73,3 +70,5 @@ function NavBar({taillePokList, countState}) {
 }
 
 export default NavBar
+
+
