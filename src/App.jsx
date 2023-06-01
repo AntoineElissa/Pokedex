@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import PokemonCard from './components/PokemonCard'
+import NavBar from './components/NavBar'
 
 const pokemonList = [
   {
@@ -34,66 +35,16 @@ const pokemonList = [
 
 function App() {
 
-
-  /* Compteur */
-  const [count, setCount] = useState(0)
-
-
-  /* Evenement clic bouton prec/suivant */
-  const handleClick = (event) => {
-
-  
-    const parent = event.target;
-
-    /* Debug */
-    console.log("taille tab pokemon : " + pokemonList.length);
-    console.log(count);
+    /* Compteur */
+    const [count, setCount] = useState(0)
 
 
-    /* Detect precedent ou suivant selon id target */
-    switch (parent.id) {
-
-
-
-
-      /* Precedente */
-      case "btn-prec" : 
-        
-        setCount(count - 1);
-          
-        if(count < 0 ){
-            setCount(pokemonList.length -1 );
-          }
-      
-      break;
-
-
-
-
-      /* Suivante */
-      case "btn-suiv": 
-      
-      setCount(count + 1);
-
-      if(count >= pokemonList.length ){
-        setCount(0);
-      }
-
-      break;
-    }
-    
-   }
-
-  
   return (
 
     <>
 
+      <NavBar taillePokList={pokemonList.length} countState ={[count, setCount]} />
       <PokemonCard pokemon={pokemonList[count]}/>
-
-      <h1> Selectionne ton pokémon </h1>
-      <button id="btn-prec" className="button" onClick = {handleClick} > Precedente </button>
-      <button id="btn-suiv" className="button" onClick = {handleClick} > Suivante </button>
 
     </>
 
